@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Admin Support Tool</title>
+</head>
+
+<body>
+<div class="wrapper">
+<header class="form__header">
+  <h1 class="form__header--heading">Admin Support <span>Tool</span></h1>
+  <p class="form__header--descripion">
+    Support admin tool is designed to create value for the Support team by reducing the complexity/number of steps taken to perform bulk API actions.
+
+    This means that more time is saved for the other fun parts of our work! 🚀
+  </p>
+</header>
+
+  <form action="/upload" method="POST" enctype="multipart/form-data" class="form__main">
+  <!-- File Upload -->
+  <div class="form__upload">
+    <label for="upload">Upload CSV: </label>
+    <input type="file" name="upload" id="upload" accept=".csv" required />
+  </div>
+<!--    {% with messages = get_flashed_messages() %}-->
+<!--      {% if messages %}-->
+<!--        {% for msg in messages %}-->
+<!--          <p>{{msg}}</p>-->
+<!--        {% endfor %}-->
+<!--      {% endif %}-->
+<!--    {% endwith %}-->
+    <button type="submit" class="button">Upload</button>
+  </form>
+
+<form action="/submit" method="POST" class="form__main" >
+
+  <fieldset class="form__radio">
+    <legend>Select Region</legend>
+
+    <div>
+      <input type="radio" id="euw1" name="region" value="euw1" checked />
+      <label for="euw1">EUW1</label>
+    </div>
+
+    <div>
+      <input type="radio" id="euw2" name="region" value="euw2" checked />
+      <label for="euw2">EUW2</label>
+    </div>
+
+    <div>
+      <input type="radio" id="ap" name="region" value="ap" />
+      <label for="ap">AP</label>
+    </div>
+
+    <div>
+      <input type="radio" id="us" name="region" value="us" />
+      <label for="us">US</label>
+    </div>
+
+    <div>
+      <input type="radio" id="ca" name="region" value="ca" />
+      <label for="ca">CA</label>
+    </div>
+
+  </fieldset>
+
+
+  <!-- Api Action -->
+  <fieldset class="form__radio">
+    <legend>Select Action</legend>
+
+    <div>
+      <input type="radio" id="monitor" name="action" value="monitor" checked />
+      <label for="monitor">Monitor</label>
+    </div>
+
+    <div>
+      <input type="radio" id="demonitor" name="action" value="demonitor" checked />
+      <label for="demonitor">Demonitor</label>
+    </div>
+
+  </fieldset>
+
+  <!-- Api Key -->
+  <div class="form__text">
+    <label for="key">Enter API Key: </label>
+    <input type="text" name="key" placeholder="Key" id="key" required />
+  </div>
+
+    <div class="form__text">
+    <label for="file">Enter Filename: </label>
+    <input type="text" name="file" placeholder="Filename" id="file" required />
+  </div>
+
+  <button type="submit" class="button">Begin</button>
+</form>
+
+</div>
+</body>
+</html>
